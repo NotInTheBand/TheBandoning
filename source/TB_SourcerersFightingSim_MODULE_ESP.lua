@@ -6,6 +6,7 @@ local espT = {
     }
 }
 
+local player = game.Players.LocalPlayer
 
 function getScreenVector2(obj)
     if obj then
