@@ -1,4 +1,6 @@
-function drawESP()
+local espLib = {}
+
+function espLib:drawESP()
     print("DRAWING")
     -- Synapse Only code
     if syn then
