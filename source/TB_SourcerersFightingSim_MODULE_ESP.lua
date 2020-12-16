@@ -1,4 +1,5 @@
 function drawESP()
+    print("DRAWING")
     -- Synapse Only code
     if syn then
         -- Must be ran near start of rs() so it will update properly
