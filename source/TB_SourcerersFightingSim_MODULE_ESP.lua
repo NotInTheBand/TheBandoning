@@ -4,7 +4,7 @@ function espLib:drawESP()
     -- Synapse Only code
     if syn then
         -- Must be ran near start of rs() so it will update properly
-        if JSON.esp_Players then
+        if true then
             -- ESP
             local pTable = game.Players:GetPlayers()
             for i,v in pairs(espT.syn) do
