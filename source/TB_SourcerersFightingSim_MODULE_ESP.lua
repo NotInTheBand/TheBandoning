@@ -1,5 +1,55 @@
 local espLib = {}
 
+local espT = {
+    syn = {
+
+    }
+}
+
+
+function getScreenVector2(obj)
+    if obj then
+        if obj.ClassName == "Part" then
+            local camera = workspace.CurrentCamera
+            local worldPoint = obj.Position
+            local vector, onScreen = camera:WorldToScreenPoint(worldPoint)
+            
+            local screenPoint = Vector2.new(vector.X, vector.Y)
+            local depth = vector.Z
+            return {point = screenPoint, depth = depth}
+        end
+    end
+end
+
+function getMagnitudeFromPlayer(obj)
+    if obj then
+        if player.Character:FindFirstChild("HumanoidRootPart") then
+            return (obj.position - player.Character.HumanoidRootPart.position).Magnitude
+        end
+    end
+end
+
+function NumberSuffix(Num)
+    local List = {
+        "K","M","B","T","Qd","Qn","Sx","Sp","O","N" --List of your suffixes in order of 1000's
+        }
+
+    local ListCount = 0
+    -- while we're not at the correct suffix do
+    while Num / 1000 >= 1 do
+        -- increment the suffix from the array
+        ListCount = ListCount + 1
+        -- divide the number so we can continue with it.
+        Num = Num / 1000
+    end
+    -- if the initial number was < 1000 return the number.
+    if ListCount == 0 then
+        return Num
+    end
+    -- returns the number, with the suffix  added at the end
+    return math.floor(Num*10)/10 ..List[ListCount].."+"
+end
+
 function espLib:drawESP()
     -- Synapse Only code
     if syn then
