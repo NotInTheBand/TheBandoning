@@ -3,7 +3,7 @@ local espLib = {}
 function espLib:drawESP()
     -- Synapse Only code
     if syn then
-        -- Must be ran near start of rs() so it will update properly
+        -- Must be ran near start of rs() so it will update properly :C
         if true then
             -- ESP
             local pTable = game.Players:GetPlayers()
