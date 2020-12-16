@@ -128,4 +128,10 @@ function espLib:clearESP()
     end
 end
 
+function updater10()
+    JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
+end
+
+spawn(updater10)
+
 return espLib
