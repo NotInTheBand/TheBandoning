@@ -50,6 +50,8 @@ function NumberSuffix(Num)
     return math.floor(Num*10)/10 ..List[ListCount].."+"
 end
 
+
+
 function espLib:drawESP()
     -- Synapse Only code
     if syn then
@@ -74,11 +76,11 @@ function espLib:drawESP()
                     local label = Drawing.new("Text")
 
                     label.Text = v.Name
-                    if JSON.esp_Distance then
+                    if parent.JSON.esp_Distance then
                         label.Text = label.Text.. " [".. math.ceil(getMagnitudeFromPlayer(v.Character.Head)).. "]"
                     end
 
-                    if JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
+                    if parent.JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
                         label.Text = label.Text.. "\n["..NumberSuffix(v.Character.CurrentHealth.Value) .. "]"
                     elseif JSON.esp_HP then
                         label.Text = label.Text.. "\n[DEAD]"
