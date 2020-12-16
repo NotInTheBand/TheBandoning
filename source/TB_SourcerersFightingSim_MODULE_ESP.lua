@@ -117,4 +117,15 @@ function espLib:drawESP()
     end
 end
 
+function espLib:clearESP()
+    if #espT.syn > 0 then
+        for i,v in pairs(espT.syn) do
+            v:Remove()
+        end
+        espT.syn = {
+            
+        }
+    end
+end
+
 return espLib
