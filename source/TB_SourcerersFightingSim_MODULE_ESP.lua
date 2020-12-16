@@ -49,3 +49,5 @@ function espLib:drawESP()
         end
     end
 end
+
+return espLib
