@@ -1,3 +1,14 @@
+local desiredPlaceId = 6002047566
+local version = 1.0
+local applicationName = "TB_SFS".. tostring(version)
+
+local SaveName = applicationName.. "_Config_".. player.Name.. ".json" --The name of our file that will be in our exploits workspace folder
+
+local JSON
+JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
+
+
+
 local espLib = {}
 
 local espT = {
@@ -77,13 +88,13 @@ function espLib:drawESP()
                     local label = Drawing.new("Text")
 
                     label.Text = v.Name
-                    if espLib.JSON.esp_Distance then
+                    if JSON.esp_Distance then
                         label.Text = label.Text.. " [".. math.ceil(getMagnitudeFromPlayer(v.Character.Head)).. "]"
                     end
 
-                    if espLib.JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
+                    if JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
                         label.Text = label.Text.. "\n["..NumberSuffix(v.Character.CurrentHealth.Value) .. "]"
-                    elseif espLib.JSON.esp_HP then
+                    elseif JSON.esp_HP then
                         label.Text = label.Text.. "\n[DEAD]"
                     end
 
