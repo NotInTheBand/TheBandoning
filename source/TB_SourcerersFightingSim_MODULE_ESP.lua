@@ -129,7 +129,10 @@ function espLib:clearESP()
 end
 
 function updater10()
-    JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
+    while true do
+        JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
+        wait(10)
+    end
 end
 
 spawn(updater10)
