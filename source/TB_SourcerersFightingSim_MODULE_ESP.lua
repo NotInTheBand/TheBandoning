@@ -6,8 +6,8 @@ local applicationName = "TB_SFS".. tostring(version)
 
 local SaveName = applicationName.. "_Config_".. player.Name.. ".json" --The name of our file that will be in our exploits workspace folder
 
-local JSON
-JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
+local JSON = getgenv().JSON
+-- JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
 
 if JSON then
 print("JSON FOUND")
