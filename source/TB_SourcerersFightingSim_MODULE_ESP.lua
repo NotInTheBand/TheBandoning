@@ -92,13 +92,13 @@ function espLib:drawESP()
                     local label = Drawing.new("Text")
 
                     label.Text = v.Name
-                    if JSON.esp_Distance then
+                    if getgenv().JSON.esp_Distance then
                         label.Text = label.Text.. " [".. math.ceil(getMagnitudeFromPlayer(v.Character.Head)).. "]"
                     end
 
-                    if JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
+                    if getgenv().JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
                         label.Text = label.Text.. "\n["..NumberSuffix(v.Character.CurrentHealth.Value) .. "]"
-                    elseif JSON.esp_HP then
+                    elseif getgenv().JSON.esp_HP then
                         label.Text = label.Text.. "\n[DEAD]"
                     end
 
@@ -128,13 +128,13 @@ function espLib:clearESP()
     end
 end
 
-function updater10()
+function updater5()
     while true do
         JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
-        wait(10)
+        wait(5)
     end
 end
 
-spawn(updater10)
+-- spawn(updater10)
 
 return espLib
