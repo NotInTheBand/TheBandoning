@@ -1,3 +1,5 @@
+local player = game.Players.LocalPlayer
+
 local desiredPlaceId = 6002047566
 local version = 1.0
 local applicationName = "TB_SFS".. tostring(version)
@@ -19,7 +21,7 @@ local espT = {
     }
 }
 
-local player = game.Players.LocalPlayer
+
 
 function getScreenVector2(obj)
     if obj then
