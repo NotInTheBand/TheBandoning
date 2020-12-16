@@ -1,0 +1,2 @@
+getgenv().Key = "KEY"
+
