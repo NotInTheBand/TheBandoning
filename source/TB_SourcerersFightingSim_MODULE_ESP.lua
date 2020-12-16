@@ -80,7 +80,7 @@ function espLib:drawESP()
 
                     if parent.JSON.esp_HP and v.Character.CurrentHealth.Value > 0 then
                         label.Text = label.Text.. "\n["..NumberSuffix(v.Character.CurrentHealth.Value) .. "]"
-                    elseif JSON.esp_HP then
+                    elseif parent.JSON.esp_HP then
                         label.Text = label.Text.. "\n[DEAD]"
                     end
 
