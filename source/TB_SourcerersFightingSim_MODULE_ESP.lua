@@ -74,7 +74,7 @@ function espLib:drawESP()
                     local label = Drawing.new("Text")
 
                     label.Text = v.Name
-                    if JSON.esp_Distance then
+                    if parent.JSON.esp_Distance then
                         label.Text = label.Text.. " [".. math.ceil(getMagnitudeFromPlayer(v.Character.Head)).. "]"
                     end
 
