@@ -114,15 +114,15 @@ function espLib:drawESP()
                     end
 
                     -- Manages Color
-                    if isSafeZone(v) and getgenv().JSON.ShowSafeZone then
+                    if isSafeZone(v) then
                         label.Color = Color3.fromRGB(8, 245, 79)
-                    elseif v.Character.CurrentHealth.Value > 0 and not isSafeZone(v) then
+                    elseif v.Character.CurrentHealth.Value > 0 then
                         if v.Character.MaxHealth.Value > player.Character.MaxHealth.Value then
                             label.Color = Color3.fromRGB(235, 135, 42)
                         else
                             label.Color = Color3.fromRGB(42, 103, 235)
                         end
-                    elseif not isSafeZone(v) then
+                    else then
                         label.Color = Color3.fromRGB(233, 33, 33)
                     end
 
