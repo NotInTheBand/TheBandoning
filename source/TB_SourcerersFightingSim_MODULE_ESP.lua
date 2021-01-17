@@ -22,7 +22,17 @@ local espT = {
     }
 }
 
-
+function isSafezone(iPlayer)
+    local rv
+    local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
+    if iPlayer.Character then
+        local hrp = iPlayer.Character:FindFirstChild("HumanoidRootPart")
+        if hrp then
+            rv = ZoneModule.SafeZone(hrp.position)
+        end
+    end
+    return rv
+end
 
 function getScreenVector2(obj)
     if obj then
@@ -104,7 +114,9 @@ function espLib:drawESP()
                     end
 
                     -- Manages Color
-                    if v.Character.CurrentHealth.Value > 0 then
+                    if isSafeZone(v) then
+                        label.Color = Color3.fromRGB(8, 245, 79)
+                    elseif v.Character.CurrentHealth.Value > 0 then
                         if v.Character.MaxHealth.Value > player.Character.MaxHealth.Value then
                             label.Color = Color3.fromRGB(235, 135, 42)
                         else
