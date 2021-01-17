@@ -24,7 +24,7 @@ local espT = {
     }
 }
 
-function isSafezone(iPlayer)
+function isSafeZone(iPlayer)
     local rv
     local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
     if iPlayer.Character then
@@ -116,7 +116,7 @@ function espLib:drawESP()
                     end
 
                     -- Manages Color
-                    if false then
+                    if isSafeZone then
                         if debug then
                             print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
