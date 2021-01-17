@@ -126,12 +126,23 @@ function espLib:drawESP()
                         label.Color = Color3.fromRGB(233, 33, 33)
                     end
 
+
+
                     label.Size = 24
                     label.Center = true
                     label.Outline = true
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
-                    label.Visible = true
+                    if not getgenv().JSON.ShowSafeZone then
+                        if isSafeZone(v) then
+                            label.Visible = false
+                        end
+                    else
+                        label.Visible = true
+                    end
+                    
                     label.Position = screenpoint.point
+
+                    
 
                     table.insert(espT.syn, label)
                 end
