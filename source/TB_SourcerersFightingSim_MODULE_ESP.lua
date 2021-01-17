@@ -115,7 +115,7 @@ function espLib:drawESP()
 
                     -- Manages Color
                     if isSafeZone(v) then
-                        print(v.Name, "IN SAFEZONE")
+                        print(v.Name, "IN SAFEZONE", isSafeZOne(v))
                         label.Color = Color3.fromRGB(8, 245, 79)
                     elseif v.Character.CurrentHealth.Value > 0 then
                         -- Checks if HP Higher or Lower to determine difficulty color
