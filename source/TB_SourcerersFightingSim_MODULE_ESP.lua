@@ -118,12 +118,12 @@ function espLib:drawESP()
                     -- Manages Color
                     if isSafeZone(v) then
                         if debug then
-                            print(v.Name, "IN SAFEZONE", isSafeZOne(v))
+                            print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
                         label.Color = Color3.fromRGB(8, 245, 79)
                     elseif v.Character.CurrentHealth.Value > 0 then
                         if debug then
-                            print(v.Name, "NOT IN SAFEZONE", isSafeZOne(v))
+                            print(v.Name, "NOT IN SAFEZONE", isSafeZone(v))
                         end
                         -- Checks if HP Higher or Lower to determine difficulty color
                         if v.Character.MaxHealth.Value > player.Character.MaxHealth.Value then
