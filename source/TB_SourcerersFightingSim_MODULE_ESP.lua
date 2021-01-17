@@ -146,13 +146,11 @@ function espLib:drawESP()
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
                     --
                     if getgenv().JSON.esp_ShowSafeZone then
+                        label.Visible = true
+                    else
                         if isSafeZone(v) then
                             label.Visible = true
-                        else
-                            label.Visible = false
                         end
-                    else
-                        label.Visible = true
                     end
                     --]]
                     -- label.Visible = true
