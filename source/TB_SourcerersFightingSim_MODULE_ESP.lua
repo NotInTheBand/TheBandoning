@@ -147,9 +147,9 @@ function espLib:drawESP()
                     --
                     if getgenv().JSON.esp_ShowSafeZone then
                         if isSafeZone(v) then
-                            label.Visible = false
-                        else
                             label.Visible = true
+                        else
+                            label.Visible = false
                         end
                     else
                         label.Visible = true
