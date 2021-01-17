@@ -117,12 +117,17 @@ function espLib:drawESP()
                         label.Text = label.Text.. "\n[DEAD]"
                     end
 
+                    
+                    label.Size = 24
+
+
                     -- Manages Color
                     if isSafeZone(v) then
                         if debug then
                             print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
                         label.Color = Color3.fromRGB(8, 245, 79)
+                        label.Size = 18
                     elseif v.Character.CurrentHealth.Value > 0 then
                         if debug then
                             print(v.Name, "NOT IN SAFEZONE", isSafeZone(v))
@@ -140,7 +145,7 @@ function espLib:drawESP()
 
 
 
-                    label.Size = 24
+                    
                     label.Center = true
                     label.Outline = true
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
