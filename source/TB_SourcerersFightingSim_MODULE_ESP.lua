@@ -103,12 +103,17 @@ function espLib:drawESP()
                         label.Text = label.Text.. "\n[DEAD]"
                     end
 
+                    -- Manages Color
                     if v.Character.CurrentHealth.Value > 0 then
-                        label.Color = Color3.fromRGB(42, 103, 235)
+                        if v.Character.MaxHealth.Value > player.Character.MaxHealth.Value then
+                            label.Color = Color3.fromRGB(235, 135, 42)
+                        else
+                            label.Color = Color3.fromRGB(42, 103, 235)
+                        end
                     else
                         label.Color = Color3.fromRGB(233, 33, 33)
                     end
-                    
+
                     label.Size = 24
                     label.Center = true
                     label.Outline = true
