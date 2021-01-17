@@ -24,6 +24,20 @@ local espT = {
     }
 }
 
+function isBossZone(iPlayer)
+    local rv
+    if iPlayer then
+        local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
+        if game.Workspace:FindFirstChild(iPlayer.Name) then
+            local hrp = iPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                rv = ZoneModule.BossZone(hrp.position)
+            end
+        end
+    end
+    return rv
+end
+
 function isSafeZone(iPlayer)
     local rv
     if iPlayer then
@@ -127,6 +141,9 @@ function espLib:drawESP()
                             print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
                         label.Color = Color3.fromRGB(8, 245, 79)
+                        label.Size = 18
+                    elseif isBossZone(v) then
+                        label.Color = Color3.fromRGB(162, 68, 240)
                         label.Size = 18
                     elseif v.Character.CurrentHealth.Value > 0 then
                         if debug then
