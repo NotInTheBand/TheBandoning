@@ -116,7 +116,7 @@ function espLib:drawESP()
                     end
 
                     -- Manages Color
-                    if isSafeZone then
+                    if isSafeZone() then
                         if debug then
                             print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
@@ -142,7 +142,7 @@ function espLib:drawESP()
                     label.Center = true
                     label.Outline = true
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
-                    --[[
+                    --
                     if getgenv().JSON.esp_ShowSafeZone then
                         if isSafeZone(v) then
                             label.Visible = false
@@ -153,7 +153,7 @@ function espLib:drawESP()
                         label.Visible = true
                     end
                     --]]
-                    label.Visible = true
+                    -- label.Visible = true
                     
                     label.Position = screenpoint.point
 
