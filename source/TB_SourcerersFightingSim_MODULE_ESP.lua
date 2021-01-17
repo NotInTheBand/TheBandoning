@@ -4,7 +4,7 @@ local desiredPlaceId = 6002047566
 local version = 1.0
 local applicationName = "TB_SFS".. tostring(version)
 
-local debug = true
+local debug = false
 
 local SaveName = applicationName.. "_Config_".. player.Name.. ".json" --The name of our file that will be in our exploits workspace folder
 
@@ -27,7 +27,7 @@ local espT = {
 function isSafeZone(iPlayer)
     local rv
     local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
-    if iPlayer.Character then
+    if game.Workspace:FindFirstChild(iPlayer.Name) then
         local hrp = iPlayer.Character:FindFirstChild("HumanoidRootPart")
         if hrp then
             rv = ZoneModule.SafeZone(hrp.position)
