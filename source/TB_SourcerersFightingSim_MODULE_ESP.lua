@@ -116,7 +116,7 @@ function espLib:drawESP()
                     end
 
                     -- Manages Color
-                    if isSafeZone() then
+                    if isSafeZone(v) then
                         if debug then
                             print(v.Name, "IN SAFEZONE", isSafeZone(v))
                         end
