@@ -122,7 +122,7 @@ function espLib:drawESP()
                         else
                             label.Color = Color3.fromRGB(42, 103, 235)
                         end
-                    else then
+                    else
                         label.Color = Color3.fromRGB(233, 33, 33)
                     end
 
