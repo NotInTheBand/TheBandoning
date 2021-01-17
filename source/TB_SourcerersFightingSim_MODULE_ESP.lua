@@ -4,6 +4,8 @@ local desiredPlaceId = 6002047566
 local version = 1.0
 local applicationName = "TB_SFS".. tostring(version)
 
+local debug = true
+
 local SaveName = applicationName.. "_Config_".. player.Name.. ".json" --The name of our file that will be in our exploits workspace folder
 
 --local JSON = getgenv().JSON
@@ -115,7 +117,9 @@ function espLib:drawESP()
 
                     -- Manages Color
                     if isSafeZone(v) then
-                        print(v.Name, "IN SAFEZONE", isSafeZOne(v))
+                        if debug then
+                            print(v.Name, "IN SAFEZONE", isSafeZOne(v))
+                        end
                         label.Color = Color3.fromRGB(8, 245, 79)
                     elseif v.Character.CurrentHealth.Value > 0 then
                         -- Checks if HP Higher or Lower to determine difficulty color
