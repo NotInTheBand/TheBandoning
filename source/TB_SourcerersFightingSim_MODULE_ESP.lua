@@ -26,11 +26,13 @@ local espT = {
 
 function isSafeZone(iPlayer)
     local rv
-    local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
-    if game.Workspace:FindFirstChild(iPlayer.Name) then
-        local hrp = iPlayer.Character:FindFirstChild("HumanoidRootPart")
-        if hrp then
-            rv = ZoneModule.SafeZone(hrp.position)
+    if iPlayer then
+        local ZoneModule = require(game.ReplicatedStorage.Modules:FindFirstChild("ZoneModule"))
+        if game.Workspace:FindFirstChild(iPlayer.Name) then
+            local hrp = iPlayer.Character:FindFirstChild("HumanoidRootPart")
+            if hrp then
+                rv = ZoneModule.SafeZone(hrp.position)
+            end
         end
     end
     return rv
