@@ -141,6 +141,7 @@ function espLib:drawESP()
                     else
                         label.Visible = true
                     end
+                    label.Visible = true
                     
                     label.Position = screenpoint.point
 
