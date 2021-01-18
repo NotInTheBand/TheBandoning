@@ -172,6 +172,8 @@ function espLib:drawESP()
                     else
                         if isSafeZone(v) then
                             label.Visible = false
+                        else
+                            label.Visible = true
                         end
                     end
                     --]]
