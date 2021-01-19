@@ -151,6 +151,7 @@ function espLib:drawESP()
                         end
                         -- Checks if HP Higher or Lower to determine difficulty color
                         if v.Character.MaxHealth.Value > player.Character.MaxHealth.Value then
+                            -- If iPlayer HP larger than 5x player HP then orange else yellow
                             if v.Character.MaxHealth.Value > (player.Character.MaxHealth.Value * 5) then
                                 label.Color = Color3.fromRGB(243, 63, 31)
                             else
