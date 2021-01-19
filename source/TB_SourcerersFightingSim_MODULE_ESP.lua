@@ -1,29 +1,17 @@
 local player = game.Players.LocalPlayer
 
-local desiredPlaceId = 6002047566
-local version = 1.0
-local applicationName = "TB_SFS".. tostring(version)
-
 local debug = false
-
-local SaveName = applicationName.. "_Config_".. player.Name.. ".json" --The name of our file that will be in our exploits workspace folder
-
---local JSON = getgenv().JSON
--- JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
---[[
-if JSON then
-print("JSON FOUND")
-end
---]]
 
 local espLib = {}
 
+-- Manages esp objects
 local espT = {
     syn = {
 
     }
 }
 
+-- Determins if player is in the Boss arena
 function isBossZone(iPlayer)
     local rv
     if iPlayer then
@@ -38,6 +26,7 @@ function isBossZone(iPlayer)
     return rv
 end
 
+-- Determins if the player is in a safezone
 function isSafeZone(iPlayer)
     local rv
     if iPlayer then
@@ -74,6 +63,7 @@ function getMagnitudeFromPlayer(obj)
     end
 end
 
+-- Number updater for suffix
 function NumberSuffix(Num)
     local List = {
         "K","M","B","T","Qd","Qn","Sx","Sp","O","N" --List of your suffixes in order of 1000's
@@ -172,7 +162,6 @@ function espLib:drawESP()
                     label.Center = true
                     label.Outline = true
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
-                    --
                     -- Determins visibility of ESP based upon rule set
                     if getgenv().JSON.esp_ShowSafeZone then
                         label.Visible = true
@@ -183,7 +172,6 @@ function espLib:drawESP()
                             label.Visible = true
                         end
                     end
-                    --]]
                     -- label.Visible = true
                     
                     label.Position = screenpoint.point
@@ -197,6 +185,7 @@ function espLib:drawESP()
     end
 end
 
+-- Use to clear ESP frames prior to drawing every RenderStep
 function espLib:clearESP()
     if #espT.syn > 0 then
         for i,v in pairs(espT.syn) do
@@ -207,14 +196,5 @@ function espLib:clearESP()
         }
     end
 end
-
-function updater5()
-    while true do
-        JSON = game:service'HttpService':JSONDecode(readfile(SaveName)) --This will return a table populated with our contents, so now you could do JSON.DidTeleport and it would print true
-        wait(5)
-    end
-end
-
--- spawn(updater10)
 
 return espLib
