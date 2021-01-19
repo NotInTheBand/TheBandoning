@@ -158,6 +158,7 @@ function espLib:drawESP()
                                 label.Color = Color3.fromRGB(235, 135, 42)
                             end
                         else
+                            -- Blue for those whos HP is less than the players HP
                             label.Color = Color3.fromRGB(42, 103, 235)
                         end
                     else
