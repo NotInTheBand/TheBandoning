@@ -173,6 +173,7 @@ function espLib:drawESP()
                     label.Outline = true
                     label.OutlineColor = Color3.fromRGB(29, 29, 29)
                     --
+                    -- Determins visibility of ESP based upon rule set
                     if getgenv().JSON.esp_ShowSafeZone then
                         label.Visible = true
                     else
