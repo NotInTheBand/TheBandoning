@@ -1,4 +1,4 @@
-local function hash:sha256(msg)
+function hash:sha256(msg)
     local function band(int1, int2, int3, ...)
             int1 = int1 % 2^32
             int2 = int2 % 2^32
