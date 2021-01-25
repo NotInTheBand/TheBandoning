@@ -1,3 +1,5 @@
+local hash = {}
+
 function hash:sha256(msg)
     local function band(int1, int2, int3, ...)
             int1 = int1 % 2^32
